@@ -22,11 +22,11 @@ const MemberRequests = () => {
 
   const approveReq =(item)=>{
     axios.get(`http://localhost:5000/approve?email=${item.email}`)
-    document.querySelectorAll("."+item.email).classList.add('hidden')
+    document.querySelectorAll("."+item.email).forEach(item=>item.classList.add('hidden'))
   }
   const rejectReq =(item)=>{
     axios.get(`http://localhost:5000/reject?email=${item.email}`)
-    document.querySelectorAll("."+item.email).classList.add('hidden')
+    document.querySelectorAll("."+item.email).forEach(item=>item.classList.add('hidden'))
   }
 
   const closePopup = () => {
